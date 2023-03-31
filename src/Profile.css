@@ -1,0 +1,14 @@
+.nickName{
+
+font-size: 15px;
+font-weight: lighter;
+
+}
+.userCards{
+
+    max-width: 700px;
+}
+span{
+
+    text-transform: capitalize;
+}
