@@ -41,11 +41,11 @@ function Subedit({ comingData, id }) {
 
   const formik = useFormik({
     initialValues: {
-      profileName: comingData.profileName,
+      ProfileName: comingData.ProfileName,
       nickName: comingData.nickName,
-      martialStatus: comingData.martialStatus,
+      status: comingData.status,
+      age: comingData.age,
       email: comingData.email,
-      password: comingData.password,
     },
     // validationSchema: formValidationSchema,
     onSubmit: (updatedUserData) => {
@@ -95,7 +95,7 @@ function Subedit({ comingData, id }) {
             sx={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
           >
             <TextField
-              value={values.profileName}
+              value={values.ProfileName}
               onChange={handleChange}
               sx={{ marginTop: "20px", width: "500px" }}
               id="outlined-basic"
@@ -114,31 +114,31 @@ function Subedit({ comingData, id }) {
             />
             <TextField
               onChange={handleChange}
-              value={values.martialStatus}
+              value={values.status}
               sx={{ marginTop: "20px", width: "500px" }}
               id="outlined-basic"
               label="Status"
               variant="outlined"
-              name="martialStatus"
+              name="status"
             />
             <TextField
-              value={values.email}
+              value={values.age}
               onChange={handleChange}
+              sx={{ marginTop: "20px", width: "500px" }}
+              id="outlined-basic"
+              label="age"
+              variant="outlined"
+              name="age"
+            />
+            <TextField
+              onChange={handleChange}
+              value={values.email}
               sx={{ marginTop: "20px", width: "500px" }}
               id="outlined-basic"
               label="email"
+              type="email"
               variant="outlined"
               name="email"
-            />
-            <TextField
-              onChange={handleChange}
-              value={values.password}
-              sx={{ marginTop: "20px", width: "500px" }}
-              id="outlined-basic"
-              label="password"
-              type="password"
-              variant="outlined"
-              name="password"
             />
 
             <Button

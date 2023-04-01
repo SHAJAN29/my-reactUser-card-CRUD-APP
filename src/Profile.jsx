@@ -13,8 +13,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { API } from "./Api";
 
 export function Profile({ profileData }) {
-  const { profileName, nickName, martialStatus, email, password, id } =
-    profileData;
+  const { ProfileName, nickName, status, email, age, id } = profileData;
   const navigate = useNavigate();
 
   console.log(id);
@@ -95,7 +94,7 @@ export function Profile({ profileData }) {
                 color="text.secondary"
                 component="div"
               >
-                {profileName}
+                {ProfileName}
                 <span className="nickName">({nickName})</span>
               </Typography>
             </CardContent>
@@ -132,12 +131,48 @@ export function Profile({ profileData }) {
                 color="text.secondary"
                 component="div"
               >
-                {martialStatus}
-                {martialStatus == "single" ? "😍" : "❤️"}
+                {status}
+                {status == "single" ? "😍" : "❤️"}
               </Typography>
             </CardContent>
 
             {/* -----------------------------email============================== */}
+
+            <CardContent
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                component="div"
+                sx={{
+                  color: "#1b74e4",
+                  fontWeight: "500",
+                  textTransform: "uppercase",
+                  fontSize: "16px",
+                  padding: "20px 0",
+                }}
+                variant="h5"
+              >
+                age
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                }}
+                color="text.secondary"
+                component="div"
+              >
+                {age}
+              </Typography>
+            </CardContent>
+
+            {/* -----------------------------Password============================== */}
 
             <CardContent
               sx={{
@@ -170,42 +205,6 @@ export function Profile({ profileData }) {
                 component="div"
               >
                 {email}
-              </Typography>
-            </CardContent>
-
-            {/* -----------------------------Password============================== */}
-
-            <CardContent
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Typography
-                component="div"
-                sx={{
-                  color: "#1b74e4",
-                  fontWeight: "500",
-                  textTransform: "uppercase",
-                  fontSize: "16px",
-                  padding: "20px 0",
-                }}
-                variant="h5"
-              >
-                Password
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                }}
-                color="text.secondary"
-                component="div"
-              >
-                {password}
               </Typography>
             </CardContent>
 
