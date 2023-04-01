@@ -61,7 +61,7 @@ function App({}) {
   }, []);
 
   const navItems = ["Home", "Users", "Addusers"];
-
+  const links = ["/", "/users", "Addusers"];
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -74,10 +74,14 @@ function App({}) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText
+                key={index}
+                onClick={() => navigate("/Addusers")}
+                primary={item}
+              />
             </ListItemButton>
           </ListItem>
         ))}
